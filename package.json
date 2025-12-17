@@ -1,0 +1,28 @@
+{
+  "name": "rizvi-rizvi",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "framer-motion": "^10.12.16",
+    "lucide-react": "^0.244.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.1.0",
+    "tailwindcss": "^3.3.5",
+    "postcss": "^8.4.27",
+    "autoprefixer": "^10.4.14",
+    "vite": "^4.4.8",
+    "gh-pages": "^6.0.0"
+  }
+}
