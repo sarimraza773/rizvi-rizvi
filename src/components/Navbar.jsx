@@ -4,9 +4,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 // Define the primary navigation links used throughout the site.
+// We include additional pages for Team and Non‑Profit Organisations to
+// provide visitors with direct access to these sections of the site.
 const nav = [
   { to: '/', label: 'Home' },
   { to: '/services', label: 'Services' },
+  { to: '/team', label: 'Team' },
+  { to: '/non-profit', label: 'Non‑Profit' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ];
