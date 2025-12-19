@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export default function Section({ eyebrow, title, children, className = "" }) {
+export default function Section({ eyebrow, title, children, className = '' }) {
   return (
     <section className={`px-4 sm:px-6 lg:px-10 ${className}`}>
       <div className="mx-auto max-w-6xl">
