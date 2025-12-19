@@ -1,8 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import slide1 from '../assets/slide1.png';
-import slide2 from '../assets/slide2.png';
+import slide1 from '../assets/Slideshow.jpg';
+import slide2 from '../assets/slideshow2.jpg';
+import slide3 from '../assets/slideshow3.jpg';
+import slide4 from '../assets/slideshow4.jpg';
+import slide5 from '../assets/slideshow5.jpg';
+import slide6 from '../assets/slideshow6.jpg';
+
 
 
 const slidesBase = [
