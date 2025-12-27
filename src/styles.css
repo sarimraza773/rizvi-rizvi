@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global dark mode styles inspired by the lw.com aesthetic. */
 :root {
   color-scheme: dark;
 }
