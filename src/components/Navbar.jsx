@@ -2,6 +2,8 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+// Import the firm logo.  This logo will appear in the navbar alongside the firm name.
+import logo from '../assets/logo.jpg';
 
 // Define the primary navigation links used throughout the site.
 // We include additional pages for Team and Non‑Profit Organisations to
@@ -53,13 +55,18 @@ export default function Navbar() {
   }, [loc.pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink-950/70 backdrop-blur-md">
+    // Use a deep navy background on the header to echo the dark band at the top of vellani.com.
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between">
-        <NavLink to="/" className="flex items-baseline gap-2">
-          <span className="font-serif text-xl text-ink-100 tracking-tightish">Rizvi&Rizvi</span>
-          <span className="text-xs tracking-[0.18em] uppercase text-ink-200/70">
-            Legal Services
-          </span>
+        <NavLink to="/" className="flex items-center gap-3">
+          {/* Logo image */}
+          <img src={logo} alt="Rizvi&Rizvi logo" className="h-8 w-8 rounded-full object-contain" />
+          <div className="flex flex-col leading-none">
+            <span className="font-serif text-xl text-white tracking-tightish">Rizvi&Rizvi</span>
+            <span className="text-xs tracking-[0.18em] uppercase text-ink-200/70">
+              Legal Services
+            </span>
+          </div>
         </NavLink>
 
         {/* Desktop navigation */}
@@ -67,6 +74,13 @@ export default function Navbar() {
           {nav.map((n) => (
             <LinkItem key={n.to} to={n.to} label={n.label} />
           ))}
+          {/* Call to action button similar to the header on vellani.com */}
+          <a
+            href="tel:+92212345678"
+            className="ml-4 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-xs font-medium uppercase text-white hover:bg-white/15 transition-colors"
+          >
+            Call Now
+          </a>
         </nav>
 
         {/* Mobile hamburger button */}
@@ -88,7 +102,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="md:hidden border-t border-white/10 bg-ink-950/95 backdrop-blur-md"
+            className="md:hidden border-t border-white/10 bg-navy-900/95 backdrop-blur-md"
           >
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 py-6 flex flex-col gap-5">
               {nav.map((n) => (
