@@ -1,61 +1,28 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-// Import slideshow images. These are placed in the assets folder and used as
-// backgrounds for the carousel slides. If you add more images, import them here.
-// Import six unique photographs for the hero carousel.  These files are cropped
-// from the user‑provided collage and skyline images and placed under the
-// assets folder.  Using meaningful variable names helps keep track of which
-// image corresponds to which slide.
-import slide1 from '../assets/slideshow.jpg';
-import slide2 from '../assets/slideshow2.jpg';
-import slide3 from '../assets/slideshow3.jpg';
-import slide4 from '../assets/slideshow4.jpg';
-import slide5 from '../assets/slideshow5.jpg';
-import slide6 from '../assets/slideshow6.jpg';
+import slide1 from '../assets/slide1.png';
+import slide2 from '../assets/slide2.png';
+import slide5 from '../assets/slide5.jpg';
 
-// Extend the default slides to include images and more vibrant messages.  Each
-// slide now specifies an optional `image` property which, when present, will be
-// displayed as a full‑bleed background behind the text content.  If you wish to
-// add further slides simply import additional images above and add objects here.
-// Redefine the default slide set to leverage the user‑provided photos.  Each
-// object associates an imported image with a tag, title and description.
 const slidesBase = [
   {
     image: slide1,
-    tag: 'Multi-Disciplinary Law Firm',
+    tag: 'Global Reach',
     title: 'Modern legal practice, timeless values.',
     desc: 'Delivering trusted counsel and innovative solutions across corporate, tax and IP law.',
   },
   {
     image: slide2,
-    tag: '50+ Years of Service',
-    title: 'Guiding individuals and businesses to success.',
+    tag: 'Corporate Expertise',
+    title: 'Guiding businesses to success.',
     desc: 'From startups to established enterprises, we steer your legal strategy.',
-  },
-  {
-    image: slide3,
-    tag: 'Professionalism',
-    title: 'Building with integrity.',
-    desc: 'We will help you every step of the way.',
-  },
-  {
-    image: slide4,
-    tag: 'Insight',
-    title: 'Wisdom you can trust.',
-    desc: 'Drawing on decades of experience across our diverse practice areas.',
   },
   {
     image: slide5,
     tag: 'Urban View',
-    title: 'At the heart of the city that never sleeps',
-    desc: 'We reflect the dynamism and ambition of our clients.’ ventures.',
-  },
-  {
-    image: slide6,
-    tag: 'Partnership',
-    title: 'Relationships matter.',
-    desc: 'We believe strong partnerships are the foundation of success.',
+    title: 'At the heart of the city.',
+    desc: 'We reflect the dynamism and ambition of our clients’ ventures.',
   },
 ];
 
@@ -71,16 +38,11 @@ function Dot({ active, onClick }) {
   );
 }
 
-/**
- * A simple carousel that cycles through a set of slides every few seconds.
- * Dots allow manual navigation.  Animations are powered by Framer Motion.
- */
 export default function HeroCarousel({ slides = slidesBase }) {
   const [i, setI] = useState(0);
 
   const safeSlides = useMemo(() => (slides?.length ? slides : slidesBase), [slides]);
 
-  // Automatically advance slides every 7 seconds
   useEffect(() => {
     const t = setInterval(() => setI((v) => (v + 1) % safeSlides.length), 7000);
     return () => clearInterval(t);
@@ -92,17 +54,10 @@ export default function HeroCarousel({ slides = slidesBase }) {
     <section className="px-4 sm:px-6 lg:px-10 pt-10 sm:pt-14">
       <div className="mx-auto max-w-6xl">
         <div className="relative rounded-3xl border border-white/10 shadow-soft overflow-hidden">
-          {/* Background image layer */}
           {s.image ? (
-            <img
-              src={s.image}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <img src={s.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
           ) : null}
-          {/* Content overlay with translucent backdrop */}
-          {/* Use a maroon tinted backdrop instead of dark ink to evoke the leather texture seen on vellani.com */}
-          <div className="relative z-10 bg-maroon-800/60 backdrop-blur-sm">
+          <div className="relative z-10 bg-white/60 backdrop-blur-sm">
             <div className="p-6 sm:p-10 lg:p-12">
               <div className="flex items-center justify-between gap-4">
                 <p className="text-xs tracking-[0.18em] uppercase text-ink-200/80">{s.tag}</p>
@@ -144,7 +99,6 @@ export default function HeroCarousel({ slides = slidesBase }) {
                 </motion.div>
               </AnimatePresence>
             </div>
-
             <div className="h-px bg-white/10" />
             <div className="px-6 sm:px-10 lg:px-12 py-5 flex flex-wrap items-center gap-x-10 gap-y-2 text-xs text-ink-200/70">
               <span>Karachi, Pakistan</span>
