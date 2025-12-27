@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -23,6 +22,17 @@ export default {
         ],
       },
       colors: {
+
+        navy: {
+          900: '#041E42',
+          800: '#0A2342',
+          700: '#102A4C',
+        },
+        maroon: {
+          900: '#4A0E13',
+          800: '#561210',
+          700: '#6B1A24',
+        },
         ink: {
           950: '#05070b',
           900: '#0b1020',
