@@ -31,5 +31,10 @@ a {
 html,
 body,
 #root {
-  background: #F6F1EB;
+background: #F6F1EB;
+
+
+section h2 {
+  text-align: center;
+}
 }
