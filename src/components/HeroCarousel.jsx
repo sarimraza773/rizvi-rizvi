@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom';
 // from the user‑provided collage and skyline images and placed under the
 // assets folder.  Using meaningful variable names helps keep track of which
 // image corresponds to which slide.
-import slide1 from '../assets/Slideshow.jpg';
-import slide2 from '../assets/Slideshow2.jpg';
-import slide3 from '../assets/Slideshow3.jpg';
-import slide4 from '../assets/Slideshow4.jpg';
-import slide5 from '../assets/Slideshow5.jpg';
-import slide6 from '../assets/Slideshow6.jpg';
+import slide1 from '../assets/slideshow.jpg';
+import slide2 from '../assets/slideshow2.jpg';
+import slide3 from '../assets/slideshow3.jpg';
+import slide4 from '../assets/slideshow4.jpg';
+import slide5 from '../assets/slideshow5.jpg';
+import slide6 from '../assets/slideshow6.jpg';
 
 // Extend the default slides to include images and more vibrant messages.  Each
 // slide now specifies an optional `image` property which, when present, will be
