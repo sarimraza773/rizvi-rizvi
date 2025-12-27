@@ -1,6 +1,6 @@
-import React from "react";
-import Seo from "../components/Seo.jsx";
-import Section from "../components/Section.jsx";
+import React from 'react';
+import Seo from '../components/Seo.jsx';
+import Section from '../components/Section.jsx';
 
 export default function About() {
   return (
@@ -15,8 +15,8 @@ export default function About() {
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
             <h3 className="font-serif text-2xl text-ink-100 tracking-tightish">Who we are</h3>
             <p className="mt-4 text-ink-200/80 leading-relaxed">
-              Rizvi&Rizvi is a Karachi-based legal services firm. The firm highlights “thirty years of customers
-              trust & relationship” and lists key practice areas spanning taxation, corporate, intellectual property,
+              Rizvi&Rizvi is a Karachi-based legal services firm. The firm highlights over three decades
+              of customer trust and lists key practice areas spanning taxation, corporate, intellectual property,
               real estate conveyance, arbitration, and constitutional matters.
             </p>
           </div>
@@ -42,6 +42,8 @@ export default function About() {
           </p>
         </div>
       </Section>
+
+      <div className="h-16" />
     </>
   );
 }
