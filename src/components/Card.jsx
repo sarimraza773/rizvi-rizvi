@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 /**
  * A simple card component used to display a small block of content with
@@ -6,10 +7,17 @@ import React from 'react';
  * effect that slightly brightens the background.
  */
 export default function Card({ title, subtitle, children, href }) {
-  const Wrap = href ? 'a' : 'div';
+
+  const Wrap = href && href.startsWith('/') ? Link : href ? 'a' : 'div';
+
+  const linkProps = {};
+  if (href) {
+    if (href.startsWith('/')) linkProps.to = href;
+    else linkProps.href = href;
+  }
   return (
     <Wrap
-      href={href}
+      {...linkProps}
       className="group block rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-soft hover:bg-white/7 transition-colors"
     >
       <div className="p-5 sm:p-6">
