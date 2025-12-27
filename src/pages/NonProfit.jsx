@@ -6,7 +6,8 @@ import Section from '../components/Section.jsx';
  * NonProfit Organisations page
  *
  * This page describes the firm’s commitment to community engagement and
- * support for non‑profit organisations.  
+ * support for non‑profit organisations.  Feel free to expand the list with
+ * actual initiatives or update the descriptions to reflect current work.
  */
 export default function NonProfit() {
   const initiatives = [
