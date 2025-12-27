@@ -16,12 +16,12 @@ export default function Team() {
     {
       name: 'Syed Faiq Raza Rizvi',
       role: 'Managing Partner',
-      text: 'Specialist in Taxation and Intellectual Property',
+      text: 'Specialist in corporate law and regulatory compliance with over 20 years of experience guiding clients through complex transactions.',
     },
     {
-      name: 'Syed Waseem Raza Rizvi',
+      name: 'Syed Wasim Raza Rizvi',
       role: 'Managing Partner',
-      text: 'Specialist in Taxation and Intellectual Property',
+      text: 'Leads the litigation practice with a focus on arbitration and constitutional matters, known for strategic advocacy and results.',
     },
     {
       name: 'Syed Atif Raza',
@@ -30,7 +30,7 @@ export default function Team() {
     },
     {
       name: 'Omar Khan',
-      role: 'Real Estate',
+      role: 'Real Estate & Conveyance Lead',
       text: 'Provides legal counsel on property transactions, conveyancing and real estate development projects.',
     },
   ];
