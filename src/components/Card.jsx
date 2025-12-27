@@ -18,7 +18,7 @@ export default function Card({ title, subtitle, children, href }) {
   return (
     <Wrap
       {...linkProps}
-      className="group block rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-soft hover:bg-white/7 transition-colors"
+      className="group block rounded-2xl border border-navy-900/15 bg-white/40 backdrop-blur-sm shadow-soft hover:bg-white/50 transition-colors"
     >
       <div className="p-5 sm:p-6">
         <div className="flex items-start justify-between gap-3">
