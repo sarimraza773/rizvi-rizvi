@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * A generic section component with optional eyebrow, title and
+ * arbitrary content.  It provides consistent spacing and typographic
+ * treatments for top‑level sections throughout the site.
+ */
 export default function Section({ eyebrow, title, children, className = '' }) {
   return (
     <section className={`px-4 sm:px-6 lg:px-10 ${className}`}>
