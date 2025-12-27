@@ -40,3 +40,16 @@ section h2 {
   text-align: center;
 }
 }
+
+/* Increase contrast of ink text on beige background */
+.text-ink-100,
+.text-ink-200 {
+  color: #041E42;
+}
+
+.text-ink-200\/80,
+.text-ink-200\/70,
+.text-ink-200\/60 {
+  color: #041E42;
+}
+
