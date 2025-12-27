@@ -28,3 +28,8 @@ a {
     transition-duration: 0.001ms !important;
   }
 }
+html,
+body,
+#root {
+  background: #F6F1EB;
+}
