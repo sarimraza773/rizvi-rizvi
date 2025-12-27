@@ -1,12 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import slide1 from '../assets/slide1.png';
-import slide2 from '../assets/slide2.png';
-import slide5 from '../assets/slide5.jpg';
-
-const slidesBase = [
-  {
+iimport slide1 from '../assets/slideshow.jpg';
+import slide2 from '../assets/slideshow2.jpg';
+import slide5 from '../assets/slideshow5.jpg';;
     image: slide1,
     tag: 'Global Reach',
     title: 'Modern legal practice, timeless values.',
