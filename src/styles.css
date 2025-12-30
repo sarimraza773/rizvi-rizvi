@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background: #05070b;
+    
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+html,
+body,
+#root {
+background: #F6F1EB;
+    color: #041E42;
+
+
+section h2 {
+  text-align: center;
+}
+}
+
+/* Increase contrast of ink text on beige background */
+.text-ink-100,
+.text-ink-200,
+.text-ink-100\/80,
+.text-ink-100\/70,
+.text-ink-100\/60,
+.text-ink-200\/80,
+.text-ink-200\/70,
+.text-ink-200\/60 {
+  color: #041E42 !important;
+  opacity: 1 !important;
+}
+
+.text-ink-100,
+.text-ink-200 {
+  color: #041E42;
+}
+
+.text-ink-200\/80,
+.text-ink-200\/70,
+.text-ink-200\/60 {
+  color: #041E42;
+}
+
