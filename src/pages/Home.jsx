@@ -17,7 +17,7 @@ export default function Home() {
       <HeroCarousel />
 
       <Section title="A modern legal practice built on trust.">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="home-card-grid grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           <Card title="Practice Areas" subtitle="Clear expertise across core matters" href="/services">
             Explore services across taxation, corporate, intellectual property, real estate conveyance,
             arbitration, and constitutional litigation.
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section title="Explore Our Services">
+      <Section title="Explore Our Services" className="home-services-section">
         <ServiceMosaic />
       </Section>
 

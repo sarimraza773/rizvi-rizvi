@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 
 const mailto = {
-  to: 'info@rizvinrizvi.com.pk',
-  subject: encodeURIComponent('Website Inquiry - Federalcorporation'),
+  to: 'federalcorporation@hotmail.com',
+  subject: encodeURIComponent('Website Inquiry - FederalCorporation'),
 };
+
+const limits = {
+  name: 100,
+  email: 254,
+  message: 1800,
+};
+
+function isValidEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
 
 export default function ContactForm() {
   const [status, setStatus] = useState({ type: 'idle', msg: '' });
@@ -20,6 +30,16 @@ export default function ContactForm() {
       return;
     }
 
+    if (name.length > limits.name || email.length > limits.email || message.length > limits.message) {
+      setStatus({ type: 'error', msg: 'Please shorten your inquiry and try again.' });
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setStatus({ type: 'error', msg: 'Please enter a valid email address.' });
+      return;
+    }
+
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`,
     );
@@ -30,34 +50,54 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <form
+      onSubmit={onSubmit}
+      className="rounded-3xl border border-navy-900/15 bg-white/45 p-6 shadow-soft backdrop-blur-sm sm:p-8"
+    >
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-maroon-900">
+          Send an inquiry
+        </p>
+        <h3 className="mt-3 font-serif text-2xl tracking-tightish text-ink-100">
+          Contact FederalCorporation
+        </h3>
+      </div>
+
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="text-xs tracking-[0.18em] uppercase text-ink-200/80">Name</span>
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-200/80">Name</span>
           <input
             name="name"
-            className="mt-2 w-full rounded-2xl border border-white/10 bg-ink-950/40 px-4 py-3 text-ink-100 outline-none focus:border-white/25"
+            maxLength={limits.name}
+            required
+            autoComplete="name"
+            className="mt-2 w-full rounded-2xl border border-navy-900/15 bg-white/65 px-4 py-3 text-ink-100 outline-none transition-colors focus:border-navy-900/35"
             placeholder="Your full name"
           />
         </label>
 
         <label className="block">
-          <span className="text-xs tracking-[0.18em] uppercase text-ink-200/80">Email</span>
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-200/80">Email</span>
           <input
             name="email"
             type="email"
-            className="mt-2 w-full rounded-2xl border border-white/10 bg-ink-950/40 px-4 py-3 text-ink-100 outline-none focus:border-white/25"
+            maxLength={limits.email}
+            required
+            autoComplete="email"
+            className="mt-2 w-full rounded-2xl border border-navy-900/15 bg-white/65 px-4 py-3 text-ink-100 outline-none transition-colors focus:border-navy-900/35"
             placeholder="you@example.com"
           />
         </label>
       </div>
 
       <label className="block mt-4">
-        <span className="text-xs tracking-[0.18em] uppercase text-ink-200/80">Message</span>
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-200/80">Message</span>
         <textarea
           name="message"
           rows={6}
-          className="mt-2 w-full rounded-2xl border border-white/10 bg-ink-950/40 px-4 py-3 text-ink-100 outline-none focus:border-white/25"
+          maxLength={limits.message}
+          required
+          className="mt-2 w-full rounded-2xl border border-navy-900/15 bg-white/65 px-4 py-3 text-ink-100 outline-none transition-colors focus:border-navy-900/35"
           placeholder="How can we help?"
         />
       </label>
@@ -65,21 +105,21 @@ export default function ContactForm() {
       <div className="mt-5 flex flex-wrap items-center gap-3">
         <button
           type="submit"
-          className="rounded-2xl border border-white/15 bg-white/10 hover:bg-white/15 transition-colors px-5 py-3 text-sm text-ink-100"
+          className="rounded-2xl bg-navy-900 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
         >
           Send Message
         </button>
 
         {status.type !== 'idle' ? (
           <p
-            className={`text-sm ${status.type === 'error' ? 'text-red-300' : 'text-ink-200/80'}`}
+            className={`text-sm ${status.type === 'error' ? 'text-red-700' : 'text-ink-200/80'}`}
           >
             {status.msg}
           </p>
         ) : null}
       </div>
 
-      <p className="mt-6 text-xs text-ink-200/60 leading-relaxed">
+      <p className="mt-6 text-xs leading-relaxed text-ink-200/60">
         Notice: Please do not send confidential information through this form. Submitting an inquiry does not
         create an attorney-client relationship until a formal engagement is confirmed.
       </p>

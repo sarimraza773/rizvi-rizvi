@@ -39,7 +39,9 @@ export default function ReviewsFeature() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((current) => (current + 1) % reviews.length);
+      if (document.visibilityState === 'visible') {
+        setIndex((current) => (current + 1) % reviews.length);
+      }
     }, 6500);
 
     return () => clearInterval(timer);

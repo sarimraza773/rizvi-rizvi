@@ -31,8 +31,8 @@ function Dot({ active, onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className={`h-2.5 w-2.5 rounded-full transition-all ${
-        active ? 'bg-white' : 'bg-white/30 hover:bg-white/50'
+      className={`hero-dot h-2.5 rounded-full transition-all ${
+        active ? 'w-8 bg-navy-900' : 'w-2.5 bg-navy-900/25 hover:bg-navy-900/45'
       }`}
       aria-label="Go to slide"
     />
@@ -44,7 +44,11 @@ export default function HeroCarousel({ slides = slidesBase }) {
   const safeSlides = useMemo(() => (slides?.length ? slides : slidesBase), [slides]);
 
   useEffect(() => {
-    const timer = setInterval(() => setI((value) => (value + 1) % safeSlides.length), 7000);
+    const timer = setInterval(() => {
+      if (document.visibilityState === 'visible') {
+        setI((value) => (value + 1) % safeSlides.length);
+      }
+    }, 7000);
     return () => clearInterval(timer);
   }, [safeSlides.length]);
 
@@ -53,7 +57,7 @@ export default function HeroCarousel({ slides = slidesBase }) {
   return (
     <section className="px-4 pt-10 sm:px-6 sm:pt-14 lg:px-10">
       <div className="mx-auto max-w-6xl">
-        <div className="relative min-h-[640px] overflow-hidden rounded-3xl border border-white/10 shadow-soft sm:min-h-[520px] lg:h-[460px] lg:min-h-0">
+        <div className="hero-shell relative min-h-[640px] overflow-hidden rounded-3xl border border-navy-900/15 shadow-soft sm:min-h-[520px] lg:h-[500px] lg:min-h-0">
           {slide?.image ? (
             <img
               key={slide.image}
@@ -62,14 +66,18 @@ export default function HeroCarousel({ slides = slidesBase }) {
               width="1200"
               height="600"
               decoding="async"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchPriority={i === 0 ? 'high' : 'auto'}
               className="hero-slide absolute inset-0 h-full w-full object-cover"
             />
           ) : null}
 
-          <div className="relative z-10 h-full bg-white/60 backdrop-blur-sm">
+          <div className="hero-image-overlay absolute inset-0" />
+
+          <div className="relative z-10 h-full bg-white/50">
             <div className="flex h-full flex-col p-6 sm:p-10 lg:p-12">
               <div className="flex items-center justify-between gap-4">
-                <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs text-ink-200/70">
+                <span className="inline-flex items-center rounded-full border border-navy-900/10 bg-white/35 px-3 py-1 text-xs font-medium text-ink-200/80">
                   {slide?.tag ?? ''}
                 </span>
 
@@ -104,9 +112,20 @@ export default function HeroCarousel({ slides = slidesBase }) {
                       Explore services
                     </Link>
                   </div>
+
+                  <div className="mt-8 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
+                    {['50 years of practice', 'Karachi, Pakistan', 'Clear practical counsel'].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-xl border border-navy-900/10 bg-white/25 px-4 py-3 text-sm font-medium text-ink-100"
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-white/10 p-5 sm:p-6">
+                <div className="hero-feature-panel rounded-2xl border border-navy-900/10 bg-white/20 p-5 sm:p-6">
                   <p className="text-xs uppercase tracking-[0.18em] text-ink-200/80">Featured</p>
                   <p className="mt-3 text-sm text-ink-100">
                     Counsel that moves at the speed of business.

@@ -1,19 +1,8 @@
-import antiMoneyLaunderingImage from '../assets/services/anti-money-laundering.jpg';
-import arbitrationImage from '../assets/services/arbitration.jpg';
-import competitionLawImage from '../assets/services/competition-law.jpg';
-import constitutionalLitigationImage from '../assets/services/constitutional-litigation.jpg';
-import conveyanceImage from '../assets/services/conveyance.webp';
-import corporateImage from '../assets/services/corporate.jpg';
-import intellectualPropertyImage from '../assets/services/intellectual-property.webp';
-import nonProfitImage from '../assets/services/non-profit.jpg';
-import taxationImage from '../assets/services/taxation.jpg';
-
 export const services = [
   {
     slug: 'taxation',
     title: 'Taxation',
     fullTitle: 'Taxation (Direct and Indirect)',
-    image: taxationImage,
     subtitle: 'Advisory & representation',
     text: 'Tax planning, compliance guidance, and support on tax-related disputes and filings.',
     summary:
@@ -28,7 +17,6 @@ export const services = [
     slug: 'non-profit-organisations',
     title: 'NonProfit Organisation',
     fullTitle: 'Non-Profit Organisations',
-    image: nonProfitImage,
     subtitle: 'Advisory & representation',
     text: 'Charities, trusts, funds, and voluntary social welfare matters.',
     summary:
@@ -43,7 +31,6 @@ export const services = [
     slug: 'anti-money-laundering',
     title: 'Anti Money Laundering',
     fullTitle: 'Anti Money Laundering & Anti-Benami (Proxy)',
-    image: antiMoneyLaunderingImage,
     subtitle: 'Protecting institutions, preserving integrity',
     text: 'Ensuring integrity and transparency in local finance.',
     summary:
@@ -58,7 +45,6 @@ export const services = [
     slug: 'corporate',
     title: 'Corporate',
     fullTitle: 'Corporate',
-    image: corporateImage,
     subtitle: 'Company & commercial matters',
     text: 'Corporate structuring, governance, contracts, and commercial advisory.',
     summary:
@@ -73,7 +59,6 @@ export const services = [
     slug: 'intellectual-property',
     title: 'Intellectual Property',
     fullTitle: 'Intellectual Property',
-    image: intellectualPropertyImage,
     subtitle: 'Protecting valuable rights',
     text: 'IP strategy support across trademarks/copyright and related matters.',
     summary:
@@ -88,7 +73,6 @@ export const services = [
     slug: 'real-estate-conveyance',
     title: 'Conveyance',
     fullTitle: 'Real Estate Conveyance',
-    image: conveyanceImage,
     subtitle: 'Transactions & documentation',
     text: 'Support on property documentation, conveyance, and transactional execution.',
     summary:
@@ -103,7 +87,6 @@ export const services = [
     slug: 'arbitration',
     title: 'Arbitration',
     fullTitle: 'Arbitration',
-    image: arbitrationImage,
     subtitle: 'Efficient dispute resolution',
     text: 'Arbitration support and representation with a focus on clarity and outcomes.',
     summary:
@@ -118,7 +101,6 @@ export const services = [
     slug: 'constitutional-litigation',
     title: 'Constitutional Litigation',
     fullTitle: 'Constitutional Litigation',
-    image: constitutionalLitigationImage,
     subtitle: 'Public law matters',
     text: 'Representation in constitutional litigation and related legal proceedings.',
     summary:
@@ -133,7 +115,6 @@ export const services = [
     slug: 'competition-law',
     title: 'Competition Law',
     fullTitle: 'Competition Law (Antitrust & Monopolies)',
-    image: competitionLawImage,
     subtitle: 'Competition-facing issues',
     text: 'Guidance on antitrust/competition concerns and related advisory needs.',
     summary:

@@ -4,18 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Federalcorporation</title>
 
-    <!-- GitHub Pages SPA redirect fix -->
-    <script>
-        (function () {
-          const redirect = sessionStorage.redirect;
-          delete sessionStorage.redirect;
-          if (redirect && redirect !== location.href) {
-            history.replaceState(null, null, redirect.split(location.origin)[1]);
-          }
-        })();
-    </script>
+    <script src="%BASE_URL%restore-redirect.js"></script>
 </head>
 <body>
 <div id="root"></div>

@@ -3,6 +3,7 @@ import Seo from '../components/Seo.jsx';
 import Section from '../components/Section.jsx';
 import Card from '../components/Card.jsx';
 import { services } from '../data/services.js';
+import { serviceImages } from '../data/serviceImages.js';
 
 export default function Services() {
   return (
@@ -24,7 +25,7 @@ export default function Services() {
               key={service.slug}
               title={service.fullTitle}
               subtitle={service.subtitle}
-              image={service.image}
+              image={serviceImages[service.slug]}
               href={`/services/${service.slug}`}
             >
               <p>{service.text}</p>
