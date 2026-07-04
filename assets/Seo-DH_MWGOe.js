@@ -1,0 +1,1 @@
+import{r}from"./index-Bl7PUqCG.js";function a({title:e,description:t}){return r.useEffect(()=>{document.title=e?`${e} - Federalcorporation`:"Federalcorporation";const o=document.querySelector('meta[name="description"]');o&&t&&o.setAttribute("content",t)},[e,t]),null}export{a as S};
