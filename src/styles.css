@@ -1,0 +1,459 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background: #f6f1eb;
+  color: #041e42;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-transition {
+  animation: page-enter 260ms ease-out both;
+}
+
+.hero-slide {
+  animation: hero-image-enter 900ms ease-out both;
+  will-change: opacity, transform;
+}
+
+.hero-copy {
+  animation: hero-copy-enter 380ms ease-out both;
+}
+
+.hero-shell {
+  contain: layout paint;
+  isolation: isolate;
+}
+
+.hero-shell::after {
+  content: "";
+  position: absolute;
+  inset: -22%;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(58deg, rgba(4, 30, 66, 0.08) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(128deg, rgba(4, 30, 66, 0.045) 0 1px, transparent 1px 58px);
+  opacity: 0.38;
+}
+
+.hero-image-overlay {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(246, 241, 235, 0.58), rgba(246, 241, 235, 0.42)),
+    linear-gradient(to top, rgba(246, 241, 235, 0.32), transparent 55%);
+}
+
+.hero-dot {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-dot.bg-navy-900::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform-origin: left;
+  background: rgba(255, 255, 255, 0.36);
+  animation: hero-dot-progress 7s linear both;
+}
+
+.hero-feature-panel {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 16px 40px rgba(4, 30, 66, 0.1);
+  transition: transform 220ms ease, background-color 220ms ease;
+}
+
+.hero-feature-panel:hover {
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.home-card-grid > * {
+  transition: transform 220ms ease, background-color 220ms ease;
+}
+
+.home-card-grid > *:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 44px rgba(4, 30, 66, 0.18);
+}
+
+.home-services-section {
+  overflow: hidden;
+}
+
+.services-mosaic {
+  contain: layout paint;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid rgba(4, 30, 66, 0.14);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(4, 30, 66, 0.14);
+}
+
+.services-mosaic-tile {
+  position: relative;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+  overflow: hidden;
+  padding: 28px;
+  color: #ffffff;
+  isolation: isolate;
+  transform: translateZ(0);
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.services-mosaic-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.18), transparent 22%),
+    linear-gradient(135deg, rgba(4, 30, 66, 0.98), rgba(7, 59, 92, 0.9));
+}
+
+.services-mosaic-tile::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(55deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(125deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 54px);
+  opacity: 0.55;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.services-mosaic-tile:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.services-mosaic-tile:hover::after {
+  opacity: 0.8;
+  transform: translate3d(12px, -10px, 0);
+}
+
+.services-mosaic-label {
+  max-width: 16ch;
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.services-mosaic-text {
+  max-width: 24ch;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.services-mosaic-tile svg {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+}
+
+.services-mosaic-tile-2::before {
+  background:
+    radial-gradient(circle at 76% 28%, rgba(202, 163, 91, 0.28), transparent 26%),
+    linear-gradient(135deg, #0d2547, #07172e);
+}
+
+.services-mosaic-tile-3::before {
+  background:
+    radial-gradient(circle at 24% 72%, rgba(255, 255, 255, 0.16), transparent 28%),
+    linear-gradient(135deg, #041e42, #17395f);
+}
+
+.services-mosaic-tile-4::before {
+  background:
+    radial-gradient(circle at 72% 18%, rgba(202, 163, 91, 0.22), transparent 24%),
+    linear-gradient(135deg, #17395f, #041e42);
+}
+
+.services-mosaic-more {
+  background: #073b4c;
+  grid-column: span 2;
+}
+
+.services-mosaic-more::before {
+  background: linear-gradient(135deg, #073b4c, #041e42);
+}
+
+.service-card-overlay {
+  background:
+    linear-gradient(135deg, rgba(4, 30, 66, 0.94), rgba(4, 30, 66, 0.76) 54%, rgba(4, 30, 66, 0.58)),
+    linear-gradient(to top, rgba(4, 30, 66, 0.72), transparent 55%);
+}
+
+.reviews-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.reviews-section {
+  padding-top: 1rem;
+}
+
+.reviews-feature-copy {
+  padding: 0;
+}
+
+.reviews-feature-quote {
+  min-height: 260px;
+  padding: 0;
+}
+
+.reviews-feature-slide {
+  animation: review-enter 360ms ease-out both;
+}
+
+.reviews-avatar {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #041e42;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.about-anniversary {
+  position: relative;
+  min-height: 620px;
+  padding: 18px 0 24px;
+}
+
+.about-anniversary-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.about-anniversary-identity {
+  display: flex;
+  min-height: 560px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-anniversary-copy {
+  position: relative;
+  padding: clamp(1.5rem, 4vw, 3.5rem) 0;
+}
+
+.about-anniversary-copy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: clamp(-2.5rem, -3vw, -1rem);
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(74, 14, 19, 0.28),
+    transparent
+  );
+}
+
+.about-anniversary-message {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+.about-anniversary-banner {
+  width: 100%;
+  overflow: hidden;
+  padding: 58px 24px 70px;
+  background: #f6f1eb;
+  text-align: center;
+}
+
+.about-anniversary-banner p {
+  width: 100%;
+  margin: 0;
+  color: #4a0e13;
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(0.5rem, 1.65vw, 1.55rem);
+  letter-spacing: clamp(0.01em, 0.18vw, 0.055em);
+  line-height: 1.14;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+@keyframes review-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-dot-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-image-enter {
+  from {
+    opacity: 0.86;
+    transform: scale(1.015);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-copy-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-mosaic,
+  .reviews-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .services-mosaic-more {
+    grid-column: auto;
+  }
+
+  .services-mosaic-tile {
+    min-height: 190px;
+  }
+
+  .reviews-feature-quote {
+    min-height: 300px;
+  }
+
+  .about-anniversary-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-anniversary-identity {
+    min-height: auto;
+  }
+
+  .about-anniversary-copy {
+    padding: 0;
+    text-align: center;
+  }
+
+  .about-anniversary-copy::before {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-mosaic {
+    border-radius: 18px;
+  }
+
+  .services-mosaic-tile {
+    min-height: 160px;
+    padding: 22px;
+  }
+
+  .services-mosaic-label {
+    max-width: 100%;
+    font-size: 1.55rem;
+  }
+
+  .reviews-feature-copy,
+  .reviews-feature-quote {
+    padding: 0;
+  }
+
+  .about-anniversary {
+    min-height: 560px;
+    padding: 12px 0 18px;
+  }
+
+  .about-anniversary-banner {
+    padding: 42px 20px 54px;
+  }
+
+  .about-anniversary-banner p {
+    font-size: clamp(0.42rem, 2.6vw, 0.82rem);
+    letter-spacing: 0.01em;
+  }
+}
+
+section h2 {
+  text-align: center;
+}
+
+/* Keep ink text dark and high-contrast on the cream background. */
+.text-ink-100,
+.text-ink-200,
+.text-ink-100\/80,
+.text-ink-100\/70,
+.text-ink-100\/60,
+.text-ink-200\/80,
+.text-ink-200\/70,
+.text-ink-200\/60 {
+  color: #041e42 !important;
+  opacity: 1 !important;
+}
