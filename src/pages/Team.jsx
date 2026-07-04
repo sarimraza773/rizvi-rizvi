@@ -17,7 +17,13 @@ const partners = [
   {
     name: 'Syed Atif Raza',
     role: 'Managing Partner',
-    text: 'Provides legal advisory services across corporate, taxation, real estate, trademark, and trust registration matters, helping clients navigate regulatory requirements, compliance issues, and dispute resolution with a practical approach.',
+    text: 'Here’s a slightly expanded version:
+
+Advises clients on corporate, taxation, real estate, trademark, and trust registration matters, with a practical understanding of legal requirements, regulatory compliance, and effective dispute resolution.
+
+Another polished option:
+
+Provides legal advisory services across corporate, taxation, real estate, trademark, and trust registration matters, helping clients navigate regulatory requirements, compliance issues, and dispute resolution with a practical approach.',
   },
 ];
 
