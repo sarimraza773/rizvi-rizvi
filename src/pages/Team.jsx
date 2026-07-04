@@ -1,29 +1,40 @@
 import React from 'react';
 import Seo from '../components/Seo.jsx';
 import Section from '../components/Section.jsx';
-import Card from '../components/Card.jsx';
 
-const members = [
+const partners = [
   {
     name: 'Syed Faiq Raza Rizvi',
     role: 'Managing Partner',
-    text: 'Specialist in corporate law and regulatory compliance with over 20 years of experience guiding clients through complex transactions.',
+    status: 'On leave',
+    text: 'Leads the firm’s litigation practice with a focus on arbitration and taxation matters, bringing strategic advocacy, commercial insight and a results-oriented approach to complex disputes.',
   },
   {
     name: 'Syed Wasim Raza Rizvi',
     role: 'Managing Partner',
-    text: 'Leads the litigation practice with a focus on arbitration and constitutional matters, known for strategic advocacy and results.',
+    text: 'Recognized for his expertise in real estate law, advising clients on property transactions, conveyancing and development matters with practical judgment and meticulous attention to detail.',
   },
   {
     name: 'Syed Atif Raza',
-    role: 'Junior Partner',
-    text: 'Advises clients on intellectual property protection, technology licensing and innovation strategy.',
+    role: 'Managing Partner',
+    text: 'Advises clients on taxation matters with a practical understanding of regulatory requirements, dispute resolution and strategic tax planning.',
   },
-  {
-    name: 'Omar Khan',
-    role: 'Real Estate & Conveyance Lead',
-    text: 'Provides legal counsel on property transactions, conveyancing and real estate development projects.',
-  },
+];
+
+const staff = [
+  { name: 'Muhammad Sadiq', role: 'Senior Manager' },
+  { name: 'Atif Waqas', role: 'Senior Tax Manager' },
+  { name: 'Zohaib Hassain', role: 'Manager' },
+  { name: 'Wajahat', role: 'Manager' },
+  { name: 'Imran Ju', role: 'Senior Outdoor Staff' },
+  { name: 'Nadir Hussain', role: 'Senior Outdoor Staff' },
+  { name: 'Ghulam Abbas', role: 'Outdoor Staff' },
+  { name: 'Salman Butt', role: 'Senior Staff' },
+  { name: 'Shahzab', role: 'Senior Staff' },
+  { name: 'Atif Saleem', role: 'Senior Staff' },
+  { name: 'Osama Yousuf', role: 'Senior Staff' },
+  { name: 'Hasnain', role: 'Senior Staff' },
+  { name: 'Syed Hamza Ali', role: 'Junior Tax Consultant' },
 ];
 
 /**
@@ -50,12 +61,52 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4">
-          {members.map((m) => (
-            <Card key={m.name} title={m.name} subtitle={m.role} href="/contact">
-              {m.text}
-            </Card>
+        <div className="mt-10 grid grid-cols-1 gap-4 lg:grid-cols-3">
+          {partners.map((member) => (
+            <article
+              key={member.name}
+              className="flex h-full min-h-[250px] flex-col rounded-2xl border border-navy-900/15 bg-white/45 p-6 shadow-soft backdrop-blur-sm"
+            >
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-maroon-900">
+                  Leadership
+                </p>
+                <h3 className="mt-5 flex flex-wrap items-center gap-2 font-serif text-2xl tracking-tightish text-ink-100">
+                  {member.name}
+                  {member.status ? (
+                    <span className="rounded-full border border-maroon-900/20 bg-maroon-900/10 px-3 py-1 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-maroon-900">
+                      {member.status}
+                    </span>
+                  ) : null}
+                </h3>
+                <p className="mt-2 text-sm font-semibold text-maroon-900">{member.role}</p>
+              </div>
+              <p className="mt-8 text-sm leading-6 text-ink-200/80">{member.text}</p>
+            </article>
           ))}
+        </div>
+
+        <div className="mt-12 border-t border-navy-900/15 pt-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-maroon-900">
+              Professional Staff
+            </p>
+            <h3 className="mt-3 font-serif text-2xl tracking-tightish text-ink-100 sm:text-3xl">
+              Client service, tax, and field operations
+            </h3>
+          </div>
+
+          <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {staff.map((member) => (
+              <article
+                key={`${member.name}-${member.role}`}
+                className="rounded-xl border border-navy-900/10 bg-white/35 px-5 py-4 shadow-soft backdrop-blur-sm"
+              >
+                <h4 className="font-medium tracking-tightish text-ink-100">{member.name}</h4>
+                <p className="mt-1 text-sm text-ink-200/80">{member.role}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </Section>
 
